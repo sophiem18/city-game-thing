@@ -17,6 +17,7 @@ class ProgressiveRateStrategy
 class Alternating1RateStrategy
 class Alternating2RateStrategy
 class Linear2RateStrategy
+class Main
 
 %% Provide Attributes and Methods
 class PayStation {
@@ -36,7 +37,6 @@ class PayStationImpl {
     - coinMap: Map< Integer, Integer >
     - totalMoney: int
     + reset()
-    + main()
 }
 
 class Receipt {
@@ -71,9 +71,12 @@ class Alternating2RateStrategy{
 class Linear2RateStrategy{
     -calculateTimeBought(Entered:int) int
 }
+class Main{
+    +main()
+}
 
 %% Define relationships
-
+Main ..|> PayStation
 PayStationImpl ..|> PayStation
 PayStationImpl --> RateStrategy : uses
     RateStrategy <|.. LinearRateStrategy:implements
