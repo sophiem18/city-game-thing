@@ -72,11 +72,12 @@ class Linear2RateStrategy{
     -calculateTimeBought(Entered:int) int
 }
 class Main{
+    +calendar: Calendar
     +main()
 }
 
 %% Define relationships
-Main ..|> PayStation
+Main ..|> PayStationImpl
 PayStationImpl ..|> PayStation
 PayStationImpl --> RateStrategy : uses
     RateStrategy <|.. LinearRateStrategy:implements
